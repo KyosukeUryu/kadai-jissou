@@ -22,12 +22,8 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    if @property.nearest_stations.count == 2
-      @nearest_station1 = @property.nearest_stations.first
-      @nearest_station2 = @property.nearest_stations.last
-    elsif @property.nearest_stations.count == 1
-      @nearest_station1 = @property.nearest_stations.first
-    end
+    @nearest_station1 = @property.nearest_stations.first
+    @nearest_station2 = @property.nearest_stations.last
   end
 
   def edit

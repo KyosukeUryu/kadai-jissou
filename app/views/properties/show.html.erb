@@ -6,23 +6,19 @@
   <li><strong>備考：</strong><%= @property.remarks %></li>
 </ul>
 
-<% if @nearest_station1.present? %>
-  <h3>最寄り駅１</h3>
-  <ul class="show_property">
-    <li><strong>路線名</strong> <%= @nearest_station1.route %></li>
-    <li><strong>駅名</strong> <%= @nearest_station1.name %></li>
-    <li><strong>徒歩分数</strong> <%= @nearest_station1.on_foot %>分</li>
-  </ul>
-<% end %>
+<h3>最寄り駅１</h3>
+<ul class="show_property">
+  <li><strong>路線名</strong> <%= @nearest_station1.route %></li>
+  <li><strong>駅名</strong> <%= @nearest_station1.name %></li>
+  <li><strong>徒歩分数</strong> <%= @nearest_station1.on_foot %>分</li>
+</ul>
 
-<% if @nearest_station2.present? %>
-  <h3>最寄り駅２</h3>
-  <ul class="show_property">
-    <li><strong>路線名</strong> <%= @nearest_station2.route %></li>
-    <li><strong>駅名</strong> <%= @nearest_station2.name %></li>
-    <li><strong>徒歩分数</strong> <%= @nearest_station2.on_foot %>分</li>
-  </ul>
-<% end %>
+<h3>最寄り駅２</h3>
+<ul class="show_property">
+  <li><strong>路線名</strong> <%= @nearest_station2.route %></li>
+  <li><strong>駅名</strong> <%= @nearest_station2.name %></li>
+  <li><strong>徒歩分数</strong> <%= @nearest_station2.on_foot %>分</li>
+</ul>
 
 <div class="link_view">
   <%= link_to '編集', edit_property_path(@property.id) %>|<%= link_to '戻る', properties_path %>
