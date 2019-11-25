@@ -27,6 +27,10 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    @new_station = @property.nearest_stations.last
+    if @new_station.name.present? && @new_station.route.present? && @new_station.on_foot.present?
+      @property.nearest_stations.build
+    end
   end
 
   def update
@@ -55,4 +59,5 @@ class PropertiesController < ApplicationController
   def set_property
     @property = Property.find(params[:id])
   end
+
 end
